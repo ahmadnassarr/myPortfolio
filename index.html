@@ -31,7 +31,6 @@
       cursor: none;
     }
 
-    /* CUSTOM CURSOR */
     .cursor {
       position: fixed;
       width: 10px; height: 10px;
@@ -55,7 +54,6 @@
     }
     body:hover .cursor { opacity: 1; }
 
-    /* NOISE OVERLAY */
     body::before {
       content: '';
       position: fixed;
@@ -66,7 +64,6 @@
       z-index: 1000;
     }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -99,7 +96,6 @@
     }
     .nav-links a:hover { color: var(--accent); }
 
-    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -241,7 +237,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* SECTION SHARED */
     section { padding: 7rem 4rem; }
     .section-label {
       font-family: var(--font-mono);
@@ -265,7 +260,6 @@
       opacity: 0.2;
     }
 
-    /* ABOUT */
     .about { background: var(--bg); }
     .about-grid {
       display: grid;
@@ -308,7 +302,6 @@
       text-transform: uppercase;
     }
 
-    /* SKILLS */
     .skills { background: var(--surface); }
     .skills-grid {
       display: grid;
@@ -366,7 +359,6 @@
       right: 0; top: -1.2rem;
     }
 
-    /* PROJECTS */
     .projects { background: var(--bg); }
     .projects-grid {
       display: grid;
@@ -431,12 +423,23 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-
-    /* CONTACT */
-    .contact { background: var(--surface); }
-    .contact-inner {
-      max-width: 700px;
+    .project-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,229,255,0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
     }
+    .project-link:hover { border-color: var(--accent); }
+
+    .contact { background: var(--surface); }
+    .contact-inner { max-width: 700px; }
     .contact-text {
       font-family: var(--font-mono);
       font-size: 0.9rem;
@@ -464,29 +467,12 @@
     .contact-link:last-child { border-bottom: none; }
     .contact-link:hover { background: var(--surface2); }
     .contact-link:hover .link-arrow { color: var(--accent); transform: translateX(6px); }
-    .link-left {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
+    .link-left { display: flex; align-items: center; gap: 1.25rem; }
     .link-icon { font-size: 1.2rem; }
-    .link-name {
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: -0.01em;
-    }
-    .link-handle {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
-    .link-arrow {
-      font-size: 1rem;
-      color: var(--border);
-      transition: all 0.2s;
-    }
+    .link-name { font-weight: 700; font-size: 0.95rem; letter-spacing: -0.01em; }
+    .link-handle { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
+    .link-arrow { font-size: 1rem; color: var(--border); transition: all 0.2s; }
 
-    /* FOOTER */
     footer {
       padding: 2rem 4rem;
       border-top: 1px solid var(--border);
@@ -494,24 +480,11 @@
       justify-content: space-between;
       align-items: center;
     }
-    footer p {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-    }
+    footer p { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; }
     footer span { color: var(--accent); }
 
-    /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 768px) {
       nav { padding: 1.2rem 1.5rem; }
@@ -528,7 +501,6 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">AN_</a>
   <ul class="nav-links">
@@ -539,7 +511,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
@@ -551,7 +522,7 @@
       <span class="accent">Nassar</span><span class="dim">.</span>
     </h1>
     <p class="hero-sub">
-      Aspiring full stack web developer — building for the web with<br>HTML, CSS & JavaScript.
+      Aspiring full stack web developer — building for the web with<br>HTML, CSS &amp; JavaScript.
     </p>
     <div class="hero-ctas">
       <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -564,7 +535,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="divider"></div>
   <p class="section-label">01 — About</p>
@@ -588,7 +558,7 @@
         <div class="stat-label">Core Technologies</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num">∞</div>
+        <div class="stat-num">&#8734;</div>
         <div class="stat-label">Curiosity</div>
       </div>
       <div class="stat-box">
@@ -603,13 +573,12 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section class="skills" id="skills">
   <p class="section-label">02 — Skills</p>
   <h2 class="section-title reveal">What I Work With</h2>
   <div class="skills-grid">
     <div class="skill-card reveal">
-      <div class="skill-icon">🏗️</div>
+      <div class="skill-icon">&#127959;&#65039;</div>
       <div class="skill-name">HTML5</div>
       <div class="skill-desc">Semantic markup, accessibility, structure. Building the solid foundation every great web experience stands on.</div>
       <div class="skill-bar-wrap">
@@ -618,7 +587,7 @@
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">🎨</div>
+      <div class="skill-icon">&#127912;</div>
       <div class="skill-name">CSS3</div>
       <div class="skill-desc">Layouts, flexbox, grid, animations, and responsive design. Turning structure into visually compelling experiences.</div>
       <div class="skill-bar-wrap">
@@ -627,7 +596,7 @@
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">⚡</div>
+      <div class="skill-icon">&#9889;</div>
       <div class="skill-name">JavaScript</div>
       <div class="skill-desc">DOM manipulation, events, logic, and interactivity. Making the web feel alive and responsive to users.</div>
       <div class="skill-bar-wrap">
@@ -636,7 +605,7 @@
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">🛠️</div>
+      <div class="skill-icon">&#128295;</div>
       <div class="skill-name">Dev Tools</div>
       <div class="skill-desc">Browser DevTools, Git basics, VS Code. Building good habits and workflows from the ground up.</div>
       <div class="skill-bar-wrap">
@@ -645,7 +614,7 @@
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">📐</div>
+      <div class="skill-icon">&#128208;</div>
       <div class="skill-name">Responsive Design</div>
       <div class="skill-desc">Mobile-first thinking, media queries, fluid layouts. Ensuring great experiences across every screen size.</div>
       <div class="skill-bar-wrap">
@@ -654,7 +623,7 @@
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-icon">🔭</div>
+      <div class="skill-icon">&#128301;</div>
       <div class="skill-name">Learning Next</div>
       <div class="skill-desc">React, Node.js, databases — the full stack horizon. Actively studying and building towards it every day.</div>
       <div class="skill-bar-wrap">
@@ -665,56 +634,44 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section class="projects" id="projects">
   <div class="divider"></div>
   <p class="section-label">03 — Projects</p>
   <h2 class="section-title reveal">What I've Built</h2>
   <div class="projects-grid">
     <div class="project-card reveal">
-      <div class="project-thumb">🌐</div>
+      <div class="project-thumb">&#127925;</div>
       <div class="project-body">
-        <p class="project-tag">HTML / CSS</p>
-        <h3 class="project-title">Personal Landing Page</h3>
-        <p class="project-desc">A clean, responsive landing page built from scratch. Focused on semantic HTML structure and modern CSS layout techniques.</p>
-        <div class="project-stack">
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS3</span>
-          <span class="tag">Flexbox</span>
-        </div>
-      </div>
-    </div>
-    <div class="project-card reveal">
-      <div class="project-thumb">☀️</div>
-      <div class="project-body">
-        <p class="project-tag">JavaScript</p>
-        <h3 class="project-title">Weather Dashboard</h3>
-        <p class="project-desc">A dynamic weather app that fetches real-time data and displays it cleanly. Practiced API consumption and DOM updates.</p>
+        <p class="project-tag">School Project</p>
+        <h3 class="project-title">BeatForge AI</h3>
+        <p class="project-desc">A fully interactive browser-based Digital Audio Workstation powered by AI. Features a multi-track mixer, AI session assistant with frequency clash detection, smart arrangement suggestions, and a plugin rack with EQ, compressor, and reverb. Way beyond the brief.</p>
         <div class="project-stack">
           <span class="tag">HTML5</span>
           <span class="tag">CSS3</span>
           <span class="tag">JavaScript</span>
+          <span class="tag">AI</span>
         </div>
+        <a href="https://ahmadnassarr.github.io/BeatForge-AI/" target="_blank" class="project-link">View Live &#8594;</a>
       </div>
     </div>
     <div class="project-card reveal">
-      <div class="project-thumb">✅</div>
+      <div class="project-thumb">&#128184;</div>
       <div class="project-body">
-        <p class="project-tag">JavaScript</p>
-        <h3 class="project-title">Task Manager App</h3>
-        <p class="project-desc">A to-do list with add, complete, and delete functionality. Explored local storage, event handling, and UI state management.</p>
+        <p class="project-tag">Personal Project</p>
+        <h3 class="project-title">LebWallet</h3>
+        <p class="project-desc">A personal finance tracker built for Lebanon's dual-currency reality — tracking LBP and USD side by side. Features categorized expenses, searchable transaction history, income/expense breakdowns, and a clean mobile-first UI. A practical tool solving a real everyday problem.</p>
         <div class="project-stack">
           <span class="tag">HTML5</span>
           <span class="tag">CSS3</span>
-          <span class="tag">JS</span>
+          <span class="tag">JavaScript</span>
           <span class="tag">LocalStorage</span>
         </div>
+        <a href="https://ahmadnassarr.github.io/LebWallet/" target="_blank" class="project-link">View Live &#8594;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <p class="section-label">04 — Contact</p>
   <div class="contact-inner">
@@ -726,45 +683,43 @@
     <div class="contact-links reveal">
       <a href="mailto:ahmadnassarr1@gmail.com" class="contact-link">
         <div class="link-left">
-          <span class="link-icon">✉️</span>
+          <span class="link-icon">&#9993;&#65039;</span>
           <div>
             <div class="link-name">Email</div>
             <div class="link-handle">ahmadnassarr1@gmail.com</div>
           </div>
         </div>
-        <span class="link-arrow">→</span>
+        <span class="link-arrow">&#8594;</span>
       </a>
-      <a href="https://github.com/" target="_blank" class="contact-link">
+      <a href="https://github.com/ahmadnassarr" target="_blank" class="contact-link">
         <div class="link-left">
-          <span class="link-icon">🐙</span>
+          <span class="link-icon">&#128057;</span>
           <div>
             <div class="link-name">GitHub</div>
             <div class="link-handle">github.com/ahmadnassarr</div>
           </div>
         </div>
-        <span class="link-arrow">→</span>
+        <span class="link-arrow">&#8594;</span>
       </a>
       <a href="https://linkedin.com/" target="_blank" class="contact-link">
         <div class="link-left">
-          <span class="link-icon">💼</span>
+          <span class="link-icon">&#128188;</span>
           <div>
             <div class="link-name">LinkedIn</div>
             <div class="link-handle">linkedin.com/in/ahmadnassar</div>
           </div>
         </div>
-        <span class="link-arrow">→</span>
+        <span class="link-arrow">&#8594;</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 <span>Ahmad Nassar</span>. All rights reserved.</p>
+  <p>&#169; 2026 <span>Ahmad Nassar</span>. All rights reserved.</p>
 </footer>
 
 <script>
-  // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -782,7 +737,6 @@
   }
   animRing();
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
@@ -793,7 +747,6 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => obs.observe(el));
 
-  // Skill bars
   const barObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
